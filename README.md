@@ -2,6 +2,6 @@
 
 Tai matematinė užduotis.
 
-Index.html užduoties sprendimas.
+Index.html - atsidarius galima išbandyti programą.
 
-Main.ts užduoties sprendimo kodas.
+Main.ts - užduoties sprendimo kodas.
