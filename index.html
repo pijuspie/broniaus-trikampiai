@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="lt">
+   <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+      <title>Broniaus trikampiai</title>
+
+      <style>
+         body {
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            padding: 1rem;
+            width: 100vw;
+            height: 100vh;
+            box-sizing: border-box;
+         }
+
+         div {
+            margin-bottom: 1rem;
+         }
+
+         h1 {
+            display: inline-block;
+            font-size: 1.5rem;
+            font-weight: normal;
+            margin-right: 1rem;
+         }
+
+         button {
+            padding: 0.7rem;
+            border: black 1px solid;
+            border-radius: 3px;
+            background-color: transparent;
+         }
+
+         button:hover,
+         button:active {
+            background-color: #0000000c;
+         }
+
+         textarea {
+            flex: 1 1 auto;
+            resize: none;
+            padding: 0.2rem;
+         }
+
+         textarea:read-only {
+            outline: none;
+            background-color: #0000000c;
+         }
+      </style>
+   </head>
+   <body>
+      <div>
+         <h1>Broniaus trikampiai</h1>
+         <button onclick="buttonHandler()">Rodyti rezultatą</button>
+      </div>
+      <textarea></textarea>
+
+      <script>
+         const textarea = document.querySelector("textarea");
+         const button = document.querySelector("button");
+         let lastInput = "";
+
+         function buttonHandler() {
+            if (!textarea.getAttribute("readonly")) {
+               lastInput = textarea.value;
+               textarea.value = main(textarea.value);
+               textarea.setAttribute("readonly", "true");
+               button.innerText = "Rodyti įvestį";
+            } else {
+               textarea.value = lastInput;
+               textarea.removeAttribute("readonly");
+               button.innerText = "Rodyti rezultatą";
+            }
+         }
+      </script>
+
+      <script src="./main.js"></script>
+   </body>
+</html>
